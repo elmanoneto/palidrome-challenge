@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Palindrome Challenge</title>
+</head>
+<body>
+  <h1>Palindrome Challenge</h1>
+  <form>
+    <input type="text" placeholder="Entry" id="input">
+    <button type="button" id="btn">Generate</button>
+  </form>
+  <br>
+  <table id="table">
+    <thead>
+      <tr>
+         <th>Input</th>
+         <th>Result</th>
+      </tr>
+   </thead>
+   <tbody>
+   </tbody>
+  </table>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+<script type="text/javascript">
+  var str;
+
+  $('#btn').click(function () {
+    str = $('#input').val();
+    $('#input').val('');
+
+    if (str == str.split('').reverse().join('')) {
+      $('#table').append('<tr><td>'+str+'</td><td>is a palidrome</td></tr>');
+    } else {
+      $('#table').append('<tr><td>'+str+'</td><td>is not a palidrome</td></tr>');
+    }
+  })
+</script>
+</html>
